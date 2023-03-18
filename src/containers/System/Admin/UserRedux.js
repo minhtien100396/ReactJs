@@ -340,7 +340,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        //Đặt key getGendersStart cho action fetchGenderStart và truy cập
+        //Đặt key getGendersStart cho action fetchGenderStart và truy cậpa
         // thông qua props: this.props.getGendersStart()
         getGendersStart: () => dispatch(actions.fetchGenderStart()),
         getPositionsStart: () => dispatch(actions.fetchPositionStart()),
