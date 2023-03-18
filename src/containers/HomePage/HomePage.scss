@@ -1,0 +1,202 @@
+ //reset slick slider css
+ .slick-prev:before,
+ .slick-next:before {
+     font-family: 'FontAwesome' !important;
+     color: #d7d7d7 !important;
+ }
+
+ .slick-prev {
+     left: -10px !important;
+     z-index: 1000;
+     height: 48px !important;
+     width: 44px !important;
+     background: #fff !important;
+     border: 3px solid #d7d7d7 !important;
+
+     &:hover {
+         background: #eceaea !important;
+     }
+
+ }
+
+ .slick-next {
+     right: 0px !important;
+     z-index: 1000;
+     height: 48px !important;
+     width: 44px !important;
+     background: #fff !important;
+     border: 3px solid #d7d7d7 !important;
+
+     &:hover {
+         background: #eceaea !important;
+     }
+
+ }
+
+ .section-share {
+
+     &.section-specialty,
+     &.section-out-standing-doctor {
+         background: #f5f5f5;
+     }
+
+     &.section-about {
+         height: 520px !important;
+
+     }
+
+
+
+     .section-body {
+
+         .section-customize {
+
+             .bg-image {
+                 margin-right: 10px !important;
+                 height: 150px !important;
+                 background-position: center center;
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 background-color: #f5f5f5;
+
+
+                 &.section-specialty {
+                     background-image: url('../../assets/specialty/co-xuong-khop.jpg');
+                 }
+
+                 &.section-medical-facility {
+                     background-image: url('../../assets/medical-facility/benh-vien-thu-cuc.jpg');
+                 }
+
+                 &.section-out-standing-doctor {
+                     background-image: url('../../assets/out-standing-doctor/af-hanoi.jpg');
+                     width: 120px !important;
+                     height: 120px !important;
+                     margin-bottom: 10px;
+                     border-radius: 50%;
+                 }
+
+                 &.section-handbook {
+                     background-image: url('../../assets/handbook/benh-vien-kham-ho-hap-ha-noi.png');
+                 }
+             }
+         }
+     }
+ }
+
+ .section-share {
+     height: 330px;
+
+     .section-container {
+         margin: 0 100px;
+         display: flex;
+         flex-direction: column;
+
+         .section-header {
+             width: 99% !important;
+             height: 60px;
+             margin-bottom: 25px;
+             padding-top: 20px;
+
+             .title-section {
+                 font-size: 22px;
+                 font-weight: 600;
+             }
+
+             .btn-section {
+                 border: none;
+                 outline: none;
+                 background: #d7d7d7;
+                 padding: 10px 15px;
+                 float: right;
+                 text-transform: uppercase;
+                 color: black;
+                 cursor: pointer;
+                 font-size: 11px;
+                 margin-top: 5px;
+
+                 &:hover {
+                     background: rgb(234, 179, 12);
+                     color: white;
+                 }
+             }
+         }
+     }
+ }
+
+ .section-out-standing-doctor {
+     .slick-next {
+         right: -10px !important;
+     }
+
+     .outer-bg {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+     }
+
+     .section-customize {
+         padding: 5px;
+
+         .customize-boder {
+             border: 1px solid orange;
+             padding-top: 20px;
+         }
+     }
+ }
+
+ .home-footer {
+     padding: 10px;
+     background-color: #2fc0d7;
+     //  text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     p {
+         margin-top: 15px;
+     }
+
+     a {
+         text-decoration: none;
+     }
+ }
+
+ .section-about-outer {
+     background-color: #f5f5f5;
+     padding-bottom: 20px;
+
+     .section-about {
+         margin: 0 100px;
+         border-bottom: 1px solid #d7d7d7;
+
+
+         .section-about-header {
+             padding: 20px 10px;
+             font-size: 22px;
+             font-weight: 600;
+             margin-bottom: 10px;
+         }
+
+         .section-about-content {
+             display: flex;
+             gap: 25px;
+
+             .content-left {
+                 width: 60%;
+             }
+
+             .content-right {
+                 width: 40%;
+
+                 p {
+                     text-align: justify;
+                     font-style: italic;
+                     padding-top: 15px;
+                 }
+             }
+         }
+
+     }
+ }
