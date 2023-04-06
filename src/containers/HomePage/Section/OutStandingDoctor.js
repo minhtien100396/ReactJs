@@ -5,7 +5,10 @@ import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
 import * as actions from '../../../store/actions';
 import { LANGUAGES } from '../../../utils/';
+import { withRouter } from 'react-router';
+
 class OutStandingDoctor extends Component {
+
     constructor(props){
         //super(props): kế thừa props mà chúng ta truyền xuống
         super(props) 
@@ -25,16 +28,25 @@ class OutStandingDoctor extends Component {
         }
     }
 
+    handleViewDetailDoctor = (doctor) => {
+        if(this.props.history) {
+            this.props.history.push(`/detail-doctor/${doctor.id}`)
+        }
+    }
+
     render() {
         let allDoctors = this.state.arrDoctors;
-        allDoctors = allDoctors.concat(allDoctors);
         let {language} = this.props;
         return (
             <div className='section-share section-out-standing-doctor'>
                 <div className='section-container'>
                     <div className='section-header'>
-                        <span className='title-section'>Bác sĩ nổi bật tuần qua</span>
-                        <button className='btn-section'>Xem thêm</button>
+                        <span className='title-section'>
+                            <FormattedMessage id ="homepage.outstanding-doctor"/>
+                        </span>
+                        <button className='btn-section'>
+                            <FormattedMessage id="homepage.more-infor"/>
+                        </button>
                     </div>
                     <div className='section-body'>
                         <Slider {...this.props.settings}>
@@ -48,7 +60,7 @@ class OutStandingDoctor extends Component {
                                 let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
                                 
                                 return (
-                                    <div className='section-customize '>
+                                    <div className='section-customize' key={index} onClick={() => this.handleViewDetailDoctor(item)}>
                                         <div className='customize-boder'>
                                             <div className='outer-bg'>
                                                 <div className='bg-image section-out-standing-doctor' 
@@ -89,4 +101,4 @@ const mapDispatchToProps = dispatch => {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor));

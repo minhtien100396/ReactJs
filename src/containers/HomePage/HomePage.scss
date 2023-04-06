@@ -32,6 +32,9 @@
      }
 
  }
+ .slick-disabled {
+    display: none !important;
+ }
 
  .section-share {
 
@@ -50,6 +53,7 @@
      .section-body {
 
          .section-customize {
+            
 
              .bg-image {
                  margin-right: 10px !important;
@@ -138,6 +142,7 @@
 
      .section-customize {
          padding: 5px;
+         cursor: pointer;
 
          .customize-boder {
              border: 1px solid orange;

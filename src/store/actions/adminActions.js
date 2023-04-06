@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 import { getAllCodeService, getAllUser, eleteUserService, deleteUserService, editUserService } from '../../services/userService'
-import { createNewUserService, getDoctorHomeService} from '../../services/userService'
+import { createNewUserService, getDoctorHomeService,getAllDoctors,saveDetailDoctorService} from '../../services/userService'
 import { toast } from "react-toastify";
 // export const fetchGenderStart = () => ({
 //     type: actionTypes.FETCH_GENDER_START,
@@ -238,4 +238,59 @@ export const fetchTopDoctorFailed = () => ({
 })
 
 
+export const fetchAllDoctor = () => {
+    return async (dispatch,getState) => {
+        try {
+            let res = await getAllDoctors()
+            if(res && res.errCode === 0) {
+                dispatch(fetchAllDoctorSuccess(res.data));
+            }else {
+                dispatch(fetchAllDoctorFailed());
+            }
+        } catch(e) {
+            console.log('fetchAllDoctorFailed',e)
+            dispatch(fetchAllDoctorFailed());
+        }
+    }
+}
+
+export const fetchAllDoctorSuccess = (data) => ({
+    type: actionTypes.FETCH_ALL_DOCTOR_SUCCESS,
+    dataDoctor:data
+
+})
+
+export const fetchAllDoctorFailed = () => ({
+    type: actionTypes.FETCH_ALL_DOCTOR_FAILED,
+})
+
+
+export const saveDetailDoctor = (data) => {
+    return async (dispatch,getState) => {
+        try {
+            let res = await saveDetailDoctorService(data)
+            if(res && res.errCode === 0) {
+                toast.success("Save Info Detail Doctor succeed!");
+                dispatch(saveDetailDoctorSuccess());
+            }else {
+                console.log('aa',res)
+                toast.error("Save Info Detail Doctor error!");
+                dispatch(saveDetailDoctorFailed());
+            }
+        } catch(e) {
+            toast.error("Save Info Detail Doctor error!");
+            console.log('saveDetailDoctorFailed',e)
+            dispatch(saveDetailDoctorFailed());
+        }
+    }
+}
+
+export const saveDetailDoctorSuccess = () => ({
+    type: actionTypes.SAVE_DETAIL_DOCTOR_SUCCESS
+
+})
+
+export const saveDetailDoctorFailed = () => ({
+    type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED
+})
 // let res1 = await getDoctorHomeService();
